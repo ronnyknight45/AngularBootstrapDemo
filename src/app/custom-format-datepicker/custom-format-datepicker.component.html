@@ -1,0 +1,52 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-6">
+      <ngb-datepicker #d1 [(ngModel)]="date1" #c1="ngModel"></ngb-datepicker>
+
+      <hr />
+      <button class="btn btn-sm btn-outline-primary" (click)="date1 = today">
+        Select Today
+      </button>
+      <hr />
+
+      <pre>Model: {{ date1 | json }}</pre>
+      <pre>State: {{ c1.status }}</pre>
+    </div>
+
+    <div class="col-6">
+      <form class="form-inline">
+        <div class="form-group">
+          <div class="input-group">
+            <input
+              class="form-control"
+              placeholder="dd/mm/yyyy"
+              name="d2"
+              #c2="ngModel"
+              [(ngModel)]="date2"
+              ngbDatepicker
+              #d2="ngbDatepicker"
+            />
+            <div class="input-group-append">
+              <button
+                class="btn btn-outline-secondary calendar"
+                (click)="d2.toggle()"
+                type="button"
+              >
+                Date
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <hr />
+      <button class="btn btn-sm btn-outline-primary" (click)="date2 = today">
+        Select Today
+      </button>
+      <hr />
+
+      <pre>Model: {{ date2 | json }}</pre>
+      <pre>State: {{ c2.status }}</pre>
+    </div>
+  </div>
+</div>

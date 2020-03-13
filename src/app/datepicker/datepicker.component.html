@@ -1,0 +1,16 @@
+<div class="container-fluid">
+  <ngb-datepicker
+    [(ngModel)]="selectedDate"
+    [disabled]="disabled"
+  ></ngb-datepicker>
+  <div class="datePicker">
+    <button
+      class="btn btn-outline-{{ disabled ? 'success' : 'danger' }} shadow-none"
+      (click)="disabled = !disabled"
+    >
+      Click to {{ disabled ? "enable" : "disable" }} the DatePicker
+    </button>
+  </div>
+  <p>{{ selectedDate | json }}</p>
+  <hr />
+</div>

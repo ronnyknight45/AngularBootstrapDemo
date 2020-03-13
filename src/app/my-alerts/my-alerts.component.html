@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <p *ngFor="let alert of alertsArray">
+    <ngb-alert [type]="alert.type" (close)="closeAlert(alert)">
+      {{ alert.message }}
+    </ngb-alert>
+  </p>
+  <p>
+    <button class="btn btn-primary shadow-none" (click)="resetAlerts()">
+      Reset Alerts
+    </button>
+  </p>
+  <hr/>
+</div>

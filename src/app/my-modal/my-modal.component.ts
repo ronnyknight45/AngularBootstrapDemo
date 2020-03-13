@@ -2,7 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import {
   NgbModal,
   ModalDismissReasons,
-  NgbDate
+  NgbDate,
+  NgbCalendar
 } from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
@@ -14,8 +15,12 @@ export class MyModalComponent implements OnInit {
   closeResult: string;
   savedDate: NgbDate;
   formSubmitted: boolean = false;
+  today = this.calendarService.getToday();
 
-  constructor(private modalService: NgbModal) {}
+  constructor(
+    private modalService: NgbModal,
+    private calendarService: NgbCalendar
+  ) {}
 
   ngOnInit() {}
 
@@ -48,5 +53,4 @@ export class MyModalComponent implements OnInit {
     console.log(this.savedDate);
     this.formSubmitted = true;
   }
-
 }

@@ -1,0 +1,11 @@
+.container-fluid {
+  padding: 3%;
+}
+
+ngb-datepicker {
+  margin-bottom: 15px;
+}
+
+.datePicker {
+  padding-bottom: 2%;
+}
